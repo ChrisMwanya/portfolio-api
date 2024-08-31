@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "role_projects",
+  "info": {
+    "singularName": "role-project",
+    "pluralName": "role-projects",
+    "displayName": "role_project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "inversedBy": "role_projects"
+    }
+  }
+}
