@@ -4,7 +4,8 @@
   "info": {
     "singularName": "guestbook",
     "pluralName": "guestbooks",
-    "displayName": "guestbook"
+    "displayName": "guestbook",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,10 +15,30 @@
     "message": {
       "type": "text"
     },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+    "company": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "isValidated": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

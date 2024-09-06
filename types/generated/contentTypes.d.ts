@@ -742,7 +742,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -867,17 +866,21 @@ export interface ApiGuestbookGuestbook extends Schema.CollectionType {
     singularName: 'guestbook';
     pluralName: 'guestbooks';
     displayName: 'guestbook';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     message: Attribute.Text;
-    users_permissions_user: Attribute.Relation<
-      'api::guestbook.guestbook',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
+    company: Attribute.String;
+    role: Attribute.String;
+    email: Attribute.String;
+    avatar: Attribute.String;
+    website: Attribute.String;
+    firstName: Attribute.String;
+    lastName: Attribute.String;
+    isValidated: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
