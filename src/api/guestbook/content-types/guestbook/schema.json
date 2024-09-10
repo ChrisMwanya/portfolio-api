@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "message": {
+    "comment": {
       "type": "text"
     },
     "company": {
@@ -22,7 +22,8 @@
       "type": "string"
     },
     "email": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "avatar": {
       "type": "string"
@@ -30,15 +31,13 @@
     "website": {
       "type": "string"
     },
-    "firstName": {
-      "type": "string"
-    },
-    "lastName": {
+    "name": {
       "type": "string"
     },
     "isValidated": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "private": true
     }
   }
 }

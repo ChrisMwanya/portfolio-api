@@ -872,15 +872,16 @@ export interface ApiGuestbookGuestbook extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    message: Attribute.Text;
+    comment: Attribute.Text;
     company: Attribute.String;
     role: Attribute.String;
-    email: Attribute.String;
+    email: Attribute.String & Attribute.Unique;
     avatar: Attribute.String;
     website: Attribute.String;
-    firstName: Attribute.String;
-    lastName: Attribute.String;
-    isValidated: Attribute.Boolean & Attribute.DefaultTo<false>;
+    name: Attribute.String;
+    isValidated: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
