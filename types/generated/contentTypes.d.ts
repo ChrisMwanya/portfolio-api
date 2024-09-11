@@ -900,6 +900,48 @@ export interface ApiGuestbookGuestbook extends Schema.CollectionType {
   };
 }
 
+export interface ApiMyselfMyself extends Schema.CollectionType {
+  collectionName: 'ourselves';
+  info: {
+    singularName: 'myself';
+    pluralName: 'ourselves';
+    displayName: 'myself';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    company: Attribute.String;
+    role: Attribute.String;
+    about_me: Attribute.String;
+    link_github: Attribute.String;
+    link_whatsapp: Attribute.String;
+    link_email: Attribute.String;
+    all_links: Attribute.String;
+    link_linkedin: Attribute.String;
+    link_avatar: Attribute.String;
+    slogan: Attribute.Text;
+    slogan_colored: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::myself.myself',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::myself.myself',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -1037,6 +1079,7 @@ declare module '@strapi/types' {
       'plugin::email-designer.email-template': PluginEmailDesignerEmailTemplate;
       'api::feed.feed': ApiFeedFeed;
       'api::guestbook.guestbook': ApiGuestbookGuestbook;
+      'api::myself.myself': ApiMyselfMyself;
       'api::project.project': ApiProjectProject;
       'api::role-project.role-project': ApiRoleProjectRoleProject;
       'api::techno.techno': ApiTechnoTechno;
