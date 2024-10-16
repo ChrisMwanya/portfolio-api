@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ourselves",
+  "info": {
+    "singularName": "myself",
+    "pluralName": "ourselves",
+    "displayName": "myself",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "about_me": {
+      "type": "string"
+    },
+    "link_github": {
+      "type": "string"
+    },
+    "link_whatsapp": {
+      "type": "string"
+    },
+    "link_email": {
+      "type": "string"
+    },
+    "all_links": {
+      "type": "string"
+    },
+    "link_linkedin": {
+      "type": "string"
+    },
+    "link_avatar": {
+      "type": "string"
+    },
+    "slogan": {
+      "type": "text"
+    },
+    "slogan_colored": {
+      "type": "string"
+    }
+  }
+}
